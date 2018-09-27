@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+
+<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+
+
+<h1>Jarvis</h1>
+
+
+
+
+<ng-container *ngFor="let messages of messages | async">
+  <div class="messages" [ngClass]="{ 'from': messages.sentBy === 'Bot',
+                                      'to': messages.sentBy === 'user' }">
+      {{messages.content }}
+   </div>
+
+</ng-container>
+
+<label for="nameField">Your Messages</label>
+<input [(ngModel)]="formValue"  (keyup.enter)="sendMessages()" type="text"><br>
+
+<button (click)="sendMessages()">Send</button>
