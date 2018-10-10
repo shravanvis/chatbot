@@ -7,8 +7,13 @@
 <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 
 
+<div class="container">
+<h1>Angular ChatBot</h1>
 
-<h1>Jarvis</h1>
+
+
+
+
 
 
 
@@ -16,7 +21,7 @@
 <ng-container *ngFor="let messages of messages | async">
   <div class="messages" [ngClass]="{ 'from': messages.sentBy === 'Bot',
                                       'to': messages.sentBy === 'user' }">
-      {{messages.content }}
+      -----  {{messages.content }}
    </div>
 
 </ng-container>
@@ -25,3 +30,5 @@
 <input [(ngModel)]="formValue"  (keyup.enter)="sendMessages()" type="text"><br>
 
 <button (click)="sendMessages()">Send</button>
+
+</div>
